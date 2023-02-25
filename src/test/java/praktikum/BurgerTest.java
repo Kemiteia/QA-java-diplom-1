@@ -65,10 +65,8 @@ public class BurgerTest {
     @Test
     public void getPriceTest() {
         burger.setBuns(bun);
-        Mockito.when(bun.getPrice()).thenReturn(400f);
-        float actualPrice = bun.getPrice();
-
-        assertEquals("Неверное отображение цены", 400f, actualPrice, 0.0f);
+        burger.addIngredient(ingredient);
+        assertEquals("Неверное отображение цены", 1200, burger.getPrice(), 0);
     }
 
     @Test
